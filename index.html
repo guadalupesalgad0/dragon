@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F6F2">
+    <title>Dragon the Maine Coon</title>
+    <style>
+        /* Estilos generales: colores suaves, tipografía y espaciado */
+        :root {
+            --cream: #F8F6F2;
+            --paper: #FFFDFA;
+            --beige: #E8E0D5;
+            --navy: #172B45;
+            --blue-gray: #5F7892;
+            --rose: #D8A7B1;
+            --nude: #E8C7CD;
+            --ink: #403A36;
+            --muted: #687783;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--navy);
+        }
+
+        .hero {
+            position: relative;
+            display: block;
+            height: auto;
+            min-height: 0;
+            padding: 0;
+            overflow: hidden;
+            isolation: isolate;
+            background: var(--beige);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 1;
+            top: clamp(24px, 5vw, 76px);
+            right: clamp(24px, 5vw, 88px);
+            width: 100%;
+            max-width: min(40vw, 500px);
+            margin: 0;
+            padding: 0;
+            min-width: 0;
+            text-align: right;
+            animation: hero-content-appear .8s ease both;
+        }
+
+        @keyframes hero-content-appear {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content .eyebrow {
+            margin-bottom: 18px;
+            color: var(--navy);
+        }
+
+        .hero-content h1 {
+            max-width: 420px;
+            margin-left: auto;
+            font-size: clamp(2.35rem, 4vw, 4.5rem);
+            line-height: 1.04;
+            text-shadow: 0 1px 10px rgba(248, 246, 242, .2);
+        }
+
+        .hero-content .tagline {
+            max-width: 480px;
+            margin-left: auto;
+            color: var(--navy);
+            text-shadow: 0 1px 8px rgba(248, 246, 242, .25);
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--rose);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2 {
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 6.5vw, 4.8rem);
+            letter-spacing: -.045em;
+        }
+
+        .tagline {
+            margin: 16px 0 0;
+            color: var(--blue-gray);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            font-style: italic;
+        }
+
+        main {
+            width: min(100% - clamp(32px, 7vw, 64px), 1040px);
+            margin: 0 auto;
+        }
+
+        .intro {
+            max-width: 1040px;
+            margin: clamp(32px, 6vw, 64px) auto 0;
+            padding: clamp(28px, 5vw, 56px);
+            background: linear-gradient(145deg, color-mix(in srgb, var(--nude) 24%, transparent), var(--paper) 58%);
+            border: 1px solid color-mix(in srgb, var(--rose) 24%, transparent);
+            border-radius: 28px;
+            box-shadow: 0 18px 48px rgba(23, 43, 69, .07);
+            text-align: left;
+        }
+
+        .intro-heading {
+            margin-bottom: clamp(24px, 4vw, 38px);
+            text-align: center;
+        }
+
+        .intro-heading h2 {
+            margin-bottom: 0;
+        }
+
+        .intro-heart {
+            color: var(--rose);
+            font-size: .78em;
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+            align-items: center;
+            gap: clamp(24px, 5vw, 56px);
+        }
+
+        .profile-photo {
+            display: grid;
+            place-items: center;
+            min-width: 0;
+            margin: 0;
+            padding: 12px;
+            border: 1px solid color-mix(in srgb, var(--rose) 38%, transparent);
+            border-radius: 22px;
+            background: var(--beige);
+        }
+
+        .profile-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 620px;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
+        .profile-info {
+            min-width: 0;
+        }
+
+        .profile-bio {
+            margin: 0 0 28px;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.5vw, 1.08rem);
+        }
+
+        .profile-facts {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0 22px;
+            margin: 0;
+        }
+
+        .profile-facts div {
+            min-width: 0;
+            padding: 13px 0;
+            border-top: 1px solid color-mix(in srgb, var(--blue-gray) 22%, transparent);
+        }
+
+        .profile-facts dt {
+            color: var(--blue-gray);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .profile-facts dd {
+            margin: 3px 0 0;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .profile-traits {
+            margin-top: clamp(30px, 5vw, 48px);
+            padding-top: clamp(24px, 4vw, 36px);
+            border-top: 1px solid color-mix(in srgb, var(--rose) 36%, transparent);
+        }
+
+        .profile-traits h3 {
+            margin: 0 0 18px;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.35rem, 3vw, 1.8rem);
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .trait-list {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .trait-list li {
+            position: relative;
+            min-width: 0;
+            padding: 18px 14px 18px 28px;
+            border: 1px solid color-mix(in srgb, var(--rose) 34%, transparent);
+            border-radius: 14px;
+            background: color-mix(in srgb, var(--nude) 22%, var(--paper));
+            color: var(--navy);
+            font-size: .9rem;
+            line-height: 1.45;
+        }
+
+        .trait-list li::before {
+            position: absolute;
+            top: 25px;
+            left: 13px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--rose);
+            content: "";
+        }
+
+        .section-label {
+            margin: 0 0 12px;
+            color: var(--rose);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: clamp(1.75rem, 4vw, 2.8rem);
+        }
+
+        .gallery-section {
+            margin-top: clamp(28px, 5vw, 52px);
+            padding: clamp(44px, 6vw, 64px) clamp(16px, 3vw, 30px) clamp(52px, 7vw, 76px);
+            background: var(--paper);
+            border: 1px solid rgba(95, 120, 146, .12);
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(12px, 2.5vw, 24px);
+            margin: 34px auto 0;
+            min-width: 0;
+            max-width: 900px;
+        }
+
+        .photo-card {
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            margin: 0;
+            border: 7px solid var(--paper);
+            border-radius: 18px;
+            background: var(--beige);
+            box-shadow: 0 12px 32px rgba(73, 57, 45, .08), 0 0 0 1px color-mix(in srgb, var(--nude) 48%, transparent);
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .45s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.045);
+        }
+
+        /* Estilos aislados para la historia fotográfica Dragon's Journey */
+        .journey {
+            margin-top: clamp(44px, 8vw, 96px);
+            padding: clamp(36px, 7vw, 82px) clamp(20px, 5vw, 64px);
+            overflow: hidden;
+            border: 1px solid color-mix(in srgb, var(--rose) 26%, transparent);
+            border-radius: 28px;
+            background:
+                radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--nude) 32%, transparent), transparent 45%),
+                var(--cream);
+        }
+
+        .journey-header {
+            max-width: 700px;
+            margin: 0 auto clamp(52px, 8vw, 96px);
+            text-align: center;
+        }
+
+        .journey-header h2 {
+            margin-bottom: 12px;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+        }
+
+        .journey-subtitle {
+            margin: 0 0 18px;
+            color: var(--blue-gray);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            font-style: italic;
+        }
+
+        .journey-intro {
+            max-width: 590px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        .journey-nav {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+            max-width: 920px;
+            margin: 0 auto clamp(56px, 9vw, 104px);
+        }
+
+        .journey-tab {
+            min-width: 0;
+            min-height: 54px;
+            padding: 12px 10px;
+            border: 1px solid color-mix(in srgb, var(--rose) 34%, transparent);
+            border-radius: 12px;
+            background: rgba(255, 253, 250, .7);
+            color: var(--navy);
+            cursor: pointer;
+            font: inherit;
+            font-size: .8rem;
+            line-height: 1.4;
+            text-align: center;
+            transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+
+        .journey-tab span {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--blue-gray);
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .journey-tab:hover {
+            transform: translateY(-2px);
+            border-color: var(--rose);
+            background: color-mix(in srgb, var(--nude) 36%, var(--paper));
+        }
+
+        .journey-tab:focus-visible,
+        .journey-lightbox-trigger:focus-visible,
+        .journey-lightbox button:focus-visible {
+            outline: 3px solid var(--blue-gray);
+            outline-offset: 3px;
+        }
+
+        .journey-tab[aria-selected="true"] {
+            border-color: var(--navy);
+            background: var(--navy);
+            box-shadow: inset 0 -3px 0 var(--rose);
+            color: var(--paper);
+        }
+
+        .journey-tab[aria-selected="true"] span {
+            color: var(--nude);
+        }
+
+        .journey-chapter {
+            display: grid;
+            grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+            align-items: start;
+            gap: clamp(28px, 6vw, 72px);
+            margin: 0;
+            scroll-margin-top: 24px;
+        }
+
+        .journey.journey-tabs-enhanced .journey-chapter:not(.is-active) {
+            display: none;
+        }
+
+        .journey.journey-tabs-enhanced .journey-chapter.is-active {
+            animation: journey-chapter-appear .35s ease both;
+        }
+
+        @keyframes journey-chapter-appear {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .journey-chapter-copy {
+            min-width: 0;
+            max-width: 440px;
+        }
+
+        .journey-chapter-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 16px;
+            color: var(--blue-gray);
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+        }
+
+        .journey-chapter-label::before {
+            width: 26px;
+            height: 1px;
+            background: var(--rose);
+            content: "";
+        }
+
+        .journey-chapter h3 {
+            margin: 0 0 16px;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+            font-weight: 400;
+            line-height: 1.15;
+        }
+
+        .journey-chapter-copy > p:last-child {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .journey-photo {
+            min-width: 0;
+            margin: 0;
+            overflow: hidden;
+            border: 1px solid color-mix(in srgb, var(--rose) 24%, transparent);
+            border-radius: 18px;
+            background: var(--paper);
+            box-shadow: 0 16px 40px rgba(23, 43, 69, .08);
+        }
+
+        .journey-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: min(68svh, 680px);
+            object-fit: contain;
+        }
+
+        .journey-album,
+        .journey-gallery {
+            min-width: 0;
+        }
+
+        .journey-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: clamp(12px, 2.5vw, 24px);
+            touch-action: pan-y;
+        }
+
+        .journey-gallery.is-enhanced {
+            display: block;
+        }
+
+        .journey-slide {
+            padding: 8px;
+            background: var(--paper);
+        }
+
+        .journey-gallery.is-enhanced .journey-slide:not(.is-active) {
+            display: none;
+        }
+
+        .journey-gallery.is-enhanced .journey-slide.is-active {
+            animation: journey-slide-appear .3s ease both;
+        }
+
+        @keyframes journey-slide-appear {
+            from {
+                opacity: .55;
+                transform: translateY(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .journey-gallery-controls {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .journey-album.is-enhanced .journey-gallery-controls {
+            display: flex;
+        }
+
+        .journey-gallery-controls button {
+            display: inline-grid;
+            min-width: 44px;
+            min-height: 44px;
+            place-items: center;
+            padding: 8px 14px;
+            border: 1px solid color-mix(in srgb, var(--rose) 55%, transparent);
+            border-radius: 999px;
+            background: var(--paper);
+            color: var(--navy);
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .journey-gallery-controls button:hover:not(:disabled) {
+            background: var(--nude);
+        }
+
+        .journey-gallery-controls button:disabled {
+            opacity: .42;
+            cursor: not-allowed;
+        }
+
+        .journey-gallery-counter {
+            min-width: 48px;
+            margin: 0;
+            color: var(--blue-gray);
+            font-size: .82rem;
+            font-variant-numeric: tabular-nums;
+            text-align: center;
+        }
+
+        .journey-gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .journey-gallery-dots button {
+            min-width: 24px;
+            min-height: 24px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .journey-gallery-dots button::before {
+            display: block;
+            width: 8px;
+            height: 8px;
+            margin: auto;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--blue-gray) 34%, var(--paper));
+            content: "";
+            transition: transform .2s ease, background-color .2s ease;
+        }
+
+        .journey-gallery-dots button[aria-current="true"]::before {
+            transform: scale(1.25);
+            background: var(--rose);
+        }
+
+        .journey-gallery-controls button:focus-visible,
+        .journey-gallery-dots button:focus-visible {
+            outline: 3px solid var(--blue-gray);
+            outline-offset: 3px;
+        }
+
+        .journey-lightbox-trigger {
+            position: relative;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .journey-lightbox-trigger img {
+            transition: transform .45s ease;
+        }
+
+        .journey-lightbox-trigger:hover img {
+            transform: scale(1.025);
+        }
+
+        .journey-lightbox-trigger::before {
+            position: absolute;
+            z-index: 1;
+            right: 14px;
+            bottom: 14px;
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(23, 43, 69, .16);
+            border-radius: 50%;
+            background: rgba(255, 253, 250, .92);
+            content: "";
+            pointer-events: none;
+        }
+
+        .journey-lightbox-trigger::after {
+            position: absolute;
+            z-index: 2;
+            right: 24px;
+            bottom: 24px;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid var(--navy);
+            border-radius: 50%;
+            box-shadow: 6px 6px 0 -5px var(--navy);
+            content: "";
+            pointer-events: none;
+        }
+
+        .journey-lightbox {
+            width: min(100% - 32px, 1100px);
+            max-width: none;
+            max-height: min(92svh, 1000px);
+            padding: clamp(14px, 3vw, 28px);
+            overflow: auto;
+            border: 1px solid color-mix(in srgb, var(--rose) 45%, transparent);
+            border-radius: 20px;
+            background: var(--cream);
+            color: var(--navy);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, .35);
+        }
+
+        .journey-lightbox::backdrop {
+            background: rgba(12, 19, 29, .82);
+            backdrop-filter: none;
+        }
+
+        .journey-lightbox-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+
+        .journey-lightbox-counter {
+            margin: 0;
+            color: var(--blue-gray);
+            font-size: .85rem;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: .1em;
+        }
+
+        .journey-lightbox button {
+            display: inline-grid;
+            min-width: 44px;
+            min-height: 44px;
+            place-items: center;
+            padding: 8px 14px;
+            border: 1px solid color-mix(in srgb, var(--rose) 55%, transparent);
+            border-radius: 999px;
+            background: var(--paper);
+            color: var(--navy);
+            cursor: pointer;
+            font: inherit;
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        .journey-lightbox button:hover {
+            background: var(--nude);
+        }
+
+        .journey-lightbox-close {
+            margin-left: auto;
+            font-size: .9rem !important;
+        }
+
+        .journey-lightbox-stage {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            align-items: center;
+            gap: clamp(8px, 2vw, 20px);
+        }
+
+        .journey-lightbox-figure {
+            display: grid;
+            min-width: 0;
+            min-height: 0;
+            place-items: center;
+            margin: 0;
+        }
+
+        .journey-lightbox-image {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: calc(92svh - 130px);
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .journey-lightbox-caption {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: .9rem;
+            text-align: center;
+        }
+
+        .journey-closing {
+            margin: clamp(56px, 9vw, 100px) 0 0;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .journey-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .journey.journey-motion-ready .journey-reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .journey.journey-motion-ready .journey-reveal.journey-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 760px) {
+            .journey {
+                padding: clamp(30px, 6vw, 52px) clamp(16px, 4vw, 28px);
+            }
+
+            .journey-chapter {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 24px;
+            }
+
+            .journey-chapter-copy {
+                max-width: 620px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .journey {
+                border-radius: 20px;
+            }
+
+            .journey-header {
+                margin-bottom: 52px;
+            }
+
+            .journey-nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                margin-bottom: 36px;
+            }
+
+            .journey-gallery {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .journey-lightbox-stage {
+                grid-template-columns: 44px minmax(0, 1fr) 44px;
+                gap: 4px;
+            }
+
+            .journey-lightbox button {
+                min-width: 40px;
+                min-height: 44px;
+                padding: 6px;
+            }
+        }
+
+
+
+        @media (prefers-reduced-motion: reduce) {
+            .journey.journey-motion-ready .journey-reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .journey-lightbox-trigger img,
+            .journey-tab,
+            .journey-gallery-dots button::before {
+                transition: none;
+            }
+
+            .journey.journey-tabs-enhanced .journey-chapter.is-active,
+            .journey-gallery.is-enhanced .journey-slide.is-active {
+                animation: none;
+            }
+        }
+
+        /* Pestañas, tarjetas y vídeos exclusivos de Little Moments */
+        .little-moments {
+            margin-top: clamp(44px, 8vw, 96px);
+            padding: clamp(32px, 6vw, 72px) clamp(18px, 5vw, 56px);
+            border: 1px solid color-mix(in srgb, var(--rose) 30%, transparent);
+            border-radius: 28px;
+            background: linear-gradient(145deg, color-mix(in srgb, var(--nude) 26%, transparent), var(--paper) 58%);
+        }
+
+        .little-moments-header {
+            max-width: 700px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .little-moments-header h2 {
+            margin-bottom: 10px;
+            font-size: clamp(2rem, 5vw, 3.3rem);
+        }
+
+        .little-moments-subtitle,
+        .little-moments-category-subtitle {
+            color: var(--blue-gray);
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+        }
+
+        .little-moments-subtitle {
+            margin: 0 0 14px;
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+        }
+
+        .little-moments-description {
+            max-width: 560px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        .little-moments-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 30px;
+        }
+
+        .little-moments-tab {
+            min-height: 44px;
+            padding: 10px clamp(14px, 2.5vw, 24px);
+            border: 1px solid color-mix(in srgb, var(--rose) 45%, transparent);
+            border-radius: 999px;
+            background: var(--cream);
+            color: var(--navy);
+            cursor: pointer;
+            font: inherit;
+            font-size: .9rem;
+            transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+        }
+
+        .little-moments-tab:hover {
+            transform: translateY(-1px);
+            border-color: var(--rose);
+        }
+
+        .little-moments-tab[aria-selected="true"] {
+            border-color: var(--navy);
+            background: var(--navy);
+            box-shadow: inset 0 -3px 0 var(--rose);
+            color: var(--paper);
+        }
+
+        .little-moments-tab:focus-visible,
+        .little-moments-video:focus-visible {
+            outline: 3px solid var(--blue-gray);
+            outline-offset: 3px;
+        }
+
+        .little-moments-category-subtitle {
+            margin: 0 0 22px;
+            text-align: center;
+        }
+
+        .little-moments-panels {
+            min-width: 0;
+        }
+
+        .little-moments-panel {
+            min-width: 0;
+        }
+
+        .little-moments-enhanced .little-moments-panels {
+            position: relative;
+            width: 100%;
+        }
+
+        .little-moments-enhanced .little-moments-panel {
+            width: 100%;
+        }
+
+        .little-moments-enhanced .little-moments-panel:not(.is-active) {
+            position: absolute;
+            inset: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .little-moments-enhanced .little-moments-panel.is-active {
+            animation: little-moments-appear .35s ease both;
+        }
+
+        @keyframes little-moments-appear {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .little-moments-category-heading {
+            margin: 0 0 10px;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.45rem, 3vw, 2rem);
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .little-moments-category-subtitle {
+            margin-bottom: 28px;
+        }
+
+        .little-moments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(14px, 2.5vw, 26px);
+            min-width: 0;
+        }
+
+        .little-moments-slider-controls {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 20px auto 0;
+        }
+
+        .little-moments-enhanced .little-moments-grid {
+            display: flex;
+            justify-content: center;
+            width: min(100%, 380px);
+            margin-inline: auto;
+            touch-action: pan-y;
+        }
+
+        .little-moments-enhanced .little-moments-slider-controls {
+            display: flex;
+        }
+
+        .little-moments-enhanced .little-moments-card {
+            width: min(100%, 360px);
+        }
+
+        .little-moments-enhanced .little-moments-card:not(.is-active) {
+            display: none;
+        }
+
+        .little-moments-enhanced .little-moments-card.is-active {
+            animation: little-moments-slide-appear .28s ease both;
+        }
+
+        @keyframes little-moments-slide-appear {
+            from {
+                opacity: .55;
+                transform: translateY(7px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .little-moments-slider-controls button {
+            display: inline-grid;
+            min-width: 44px;
+            min-height: 44px;
+            place-items: center;
+            padding: 8px 14px;
+            border: 1px solid color-mix(in srgb, var(--rose) 55%, transparent);
+            border-radius: 999px;
+            background: var(--cream);
+            color: var(--navy);
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .little-moments-slider-controls button:hover:not(:disabled) {
+            background: var(--nude);
+        }
+
+        .little-moments-slider-controls button:disabled {
+            opacity: .42;
+            cursor: not-allowed;
+        }
+
+        .little-moments-slider-controls button:focus-visible,
+        .little-moments-slider-dots button:focus-visible {
+            outline: 3px solid var(--blue-gray);
+            outline-offset: 3px;
+        }
+
+        .little-moments-slider-counter {
+            min-width: 48px;
+            margin: 0;
+            color: var(--blue-gray);
+            font-size: .85rem;
+            font-variant-numeric: tabular-nums;
+            text-align: center;
+        }
+
+        .little-moments-slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 8px auto 0;
+        }
+
+        .little-moments-slider-dots button {
+            min-width: 24px;
+            min-height: 24px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .little-moments-slider-dots button::before {
+            display: block;
+            width: 8px;
+            height: 8px;
+            margin: auto;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--blue-gray) 34%, var(--paper));
+            content: "";
+            transition: transform .2s ease, background-color .2s ease;
+        }
+
+        .little-moments-slider-dots button[aria-current="true"]::before {
+            transform: scale(1.25);
+            background: var(--rose);
+        }
+
+        .little-moments-card {
+            min-width: 0;
+            margin: 0;
+            padding: 9px;
+            border: 1px solid color-mix(in srgb, var(--rose) 32%, transparent);
+            border-radius: 20px;
+            background: var(--paper);
+            box-shadow: 0 12px 30px rgba(23, 43, 69, .07);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .little-moments-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(23, 43, 69, .12);
+        }
+
+        .little-moments-video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 14px;
+            background: var(--navy);
+            object-fit: contain;
+        }
+
+        .little-moments-card figcaption {
+            padding: 12px 6px 5px;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.03rem;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .little-moments-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 680px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .little-moments,
+            .little-moments.little-moments-enhanced {
+                padding: 30px 16px;
+                border-radius: 22px;
+            }
+
+            .little-moments-tabs {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                width: min(100%, 360px);
+            }
+
+            .little-moments-tab {
+                width: 100%;
+            }
+
+            .little-moments-grid {
+                grid-template-columns: minmax(0, 1fr);
+                width: min(100%, 380px);
+            }
+
+            .little-moments-card {
+                padding: 10px;
+            }
+
+            .little-moments-video {
+                max-height: 76svh;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .little-moments-tab,
+            .little-moments-card,
+            .little-moments-slider-dots button::before {
+                transition: none;
+            }
+
+            .little-moments-enhanced .little-moments-panel.is-active,
+            .little-moments-enhanced .little-moments-card.is-active {
+                animation: none;
+            }
+        }
+
+        .social {
+            margin: 0;
+            padding: 76px clamp(20px, 5vw, 48px) 82px;
+            background: linear-gradient(135deg, color-mix(in srgb, var(--nude) 42%, transparent), transparent 72%), var(--beige);
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .social p:not(.section-label) {
+            margin: 0 auto 26px;
+            color: var(--muted);
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .social-links a {
+            flex: 0 1 270px;
+            max-width: 100%;
+            padding: 12px 20px;
+            border: 1px solid color-mix(in srgb, var(--rose) 80%, transparent);
+            border-radius: 999px;
+            color: var(--navy);
+            font-size: .9rem;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            background: rgba(255, 253, 250, .78);
+            box-shadow: 0 5px 16px rgba(23, 43, 69, .06);
+            transition: background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+            border-color: var(--rose);
+            background: var(--rose);
+            color: var(--navy);
+            box-shadow: 0 9px 22px rgba(23, 43, 69, .12);
+        }
+
+        .social-links a:focus-visible {
+            outline: 3px solid var(--blue-gray);
+            outline-offset: 3px;
+        }
+
+        footer {
+            padding: 24px 20px;
+            color: var(--muted);
+            font-size: .8rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 860px) {
+            .hero-content {
+                max-width: min(44vw, 440px);
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .intro {
+                padding: 28px clamp(18px, 5vw, 32px);
+                border-radius: 22px;
+            }
+
+            .profile-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 24px;
+            }
+
+            .profile-photo {
+                width: min(100%, 440px);
+                justify-self: center;
+            }
+
+            .profile-photo img {
+                max-height: 68svh;
+            }
+
+            .trait-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 380px) {
+            .trait-list {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                padding: 0 0 28px;
+                background: linear-gradient(180deg, var(--beige), var(--cream));
+            }
+
+            .hero-image {
+                position: relative;
+                z-index: auto;
+                grid-column: 1;
+                grid-row: 1;
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            .hero-content {
+                position: relative;
+                grid-column: 1;
+                grid-row: 2;
+                width: calc(100% - 36px);
+                max-width: 520px;
+                top: auto;
+                right: auto;
+                margin: 0 auto;
+                padding: 24px 0 0;
+                text-align: center;
+            }
+
+            .hero-content .eyebrow,
+            .hero-content h1,
+            .hero-content .tagline {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .hero-content h1 {
+                max-width: none;
+                font-size: clamp(2.25rem, 7vw, 3.3rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-section {
+                padding: 42px 12px 54px;
+                border-radius: 18px;
+            }
+
+            .photo-card {
+                border-width: 5px;
+                border-radius: 14px;
+            }
+
+            .social {
+                padding: 56px 20px 60px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .gallery {
+                grid-template-columns: minmax(0, 1fr);
+                max-width: 440px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .photo-card {
+                width: 100%;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .social-links a {
+                flex-basis: auto;
+                width: 100%;
+            }
+        }
+
+        /* Navegación sticky, con enlaces visibles incluso sin JavaScript */
+        .dragon-nav {
+            position: sticky;
+            z-index: 1000;
+            top: 0;
+            border-bottom: 1px solid color-mix(in srgb, var(--rose) 32%, transparent);
+            background: rgba(248, 246, 242, .88);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: box-shadow .3s ease, background-color .3s ease, border-color .3s ease;
+        }
+
+        .dragon-nav.has-scrolled {
+            background: rgba(248, 246, 242, .96);
+            box-shadow: 0 6px 20px rgba(23, 43, 69, .07);
+        }
+
+        @supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+            .dragon-nav {
+                background: var(--cream);
+            }
+
+            .dragon-nav.has-scrolled {
+                background: var(--paper);
+            }
+        }
+
+        @supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+            @media (max-width: 760px) {
+                .dragon-nav--enhanced .dragon-nav-links {
+                    background: var(--cream);
+                }
+            }
+        }
+
+        .dragon-nav-inner {
+            display: flex;
+            width: min(100% - clamp(32px, 7vw, 64px), 1200px);
+            min-height: 68px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin: 0 auto;
+        }
+
+        .dragon-nav-logo {
+            flex: 0 0 auto;
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            letter-spacing: -.035em;
+            text-decoration: none;
+        }
+
+        .dragon-nav-logo span {
+            color: var(--rose);
+        }
+
+        .dragon-nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: clamp(12px, 2.2vw, 30px);
+        }
+
+        .dragon-nav-links a {
+            position: relative;
+            padding: 7px 11px;
+            border-radius: 999px;
+            color: var(--navy);
+            font-size: .85rem;
+            text-decoration: none;
+            transition: color .2s ease, background-color .2s ease;
+        }
+
+        .dragon-nav-links a::after {
+            position: absolute;
+            right: 0;
+            bottom: 2px;
+            left: 0;
+            height: 1px;
+            transform: scaleX(0);
+            transform-origin: left;
+            background: var(--rose);
+            content: "";
+            transition: transform .2s ease;
+        }
+
+        .dragon-nav-links a:not([aria-current="location"]):hover {
+            color: var(--rose);
+        }
+
+        .dragon-nav-links a:not([aria-current="location"]):hover::after {
+            transform: scaleX(1);
+        }
+
+        .dragon-nav-links a[aria-current="location"] {
+            background: var(--navy);
+            color: var(--paper);
+        }
+
+        .dragon-nav-links a[aria-current="location"]::after {
+            display: none;
+        }
+
+        .dragon-nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            border: 1px solid color-mix(in srgb, var(--rose) 48%, transparent);
+            border-radius: 50%;
+            background: var(--paper);
+            cursor: pointer;
+        }
+
+        .dragon-nav-toggle span {
+            width: 18px;
+            height: 1.5px;
+            border-radius: 2px;
+            background: var(--navy);
+            transition: transform .2s ease;
+        }
+
+        .dragon-nav-toggle:focus-visible,
+        .dragon-nav-logo:focus-visible,
+        .dragon-nav-links a:focus-visible {
+            outline: 3px solid var(--blue-gray);
+            outline-offset: 4px;
+        }
+
+        #home,
+        #meet-dragon,
+        #baby-dragon,
+        #journey-title,
+        #little-moments-title,
+        #follow-dragon {
+            scroll-margin-top: 92px;
+        }
+
+        @media (max-width: 760px) {
+            .dragon-nav-inner {
+                width: calc(100% - 32px);
+                min-height: 62px;
+                gap: 14px;
+            }
+
+            .dragon-nav:not(.dragon-nav--enhanced) .dragon-nav-inner {
+                flex-wrap: wrap;
+                padding: 8px 0;
+            }
+
+            .dragon-nav:not(.dragon-nav--enhanced) .dragon-nav-links {
+                flex: 1 0 100%;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 4px 18px;
+            }
+
+            .dragon-nav--enhanced .dragon-nav-toggle {
+                display: flex;
+                flex: 0 0 auto;
+            }
+
+            .dragon-nav--enhanced .dragon-nav-links {
+                position: absolute;
+                top: calc(100% + 1px);
+                right: 16px;
+                left: 16px;
+                display: none;
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 18px;
+                border: 1px solid color-mix(in srgb, var(--rose) 34%, transparent);
+                border-radius: 0 0 18px 18px;
+                background: rgba(248, 246, 242, .94);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 16px 32px rgba(23, 43, 69, .1);
+            }
+
+            .dragon-nav--enhanced.dragon-nav-open .dragon-nav-links {
+                display: flex;
+            }
+
+            .dragon-nav-links a {
+                padding: 11px 4px;
+                font-size: .95rem;
+            }
+
+            .dragon-nav--enhanced .dragon-nav-links a[aria-current="location"] {
+                align-self: flex-start;
+                margin: 3px 0;
+                padding: 8px 13px;
+            }
+
+            .dragon-nav-links a + a {
+                border-top: 1px solid color-mix(in srgb, var(--beige) 80%, transparent);
+            }
+
+            .dragon-nav--enhanced.dragon-nav-open .dragon-nav-toggle span:first-child {
+                transform: translateY(3.25px) rotate(45deg);
+            }
+
+            .dragon-nav--enhanced.dragon-nav-open .dragon-nav-toggle span:last-child {
+                transform: translateY(-3.25px) rotate(-45deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .hero-content {
+                animation: none;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="dragon-nav" aria-label="Navegación principal">
+        <div class="dragon-nav-inner">
+            <a class="dragon-nav-logo" href="#home" aria-label="Dragon, ir al inicio">dragon <span aria-hidden="true">♡</span></a>
+            <button class="dragon-nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="dragon-nav-links">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="dragon-nav-links" id="dragon-nav-links">
+                <a href="#home">Home</a>
+                <a href="#meet-dragon">Meet Dragon</a>
+                <a href="#baby-dragon">Baby Era</a>
+                <a href="#journey-title">Journey</a>
+                <a href="#little-moments-title">Diaries</a>
+                <a href="#follow-dragon">Socials</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portada fotográfica de Dragon a pantalla completa -->
+    <header class="hero" id="home">
+        <img class="hero-image" src="imagenes/dragonPortada.jpeg" alt="Dragon mirando a la cámara, con sus orejas y patita delantera visibles">
+        <div class="hero-content">
+            <p class="eyebrow">A LITTLE CORNER OF THE INTERNET</p>
+            <h1>Dragon the Maine Coon</h1>
+            <p class="tagline">A little fluff, a lot of personality ♡</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Perfil editorial con datos y curiosidades de Dragon -->
+        <section class="intro" aria-labelledby="meet-dragon">
+            <header class="intro-heading">
+                <p class="section-label">The handsome boy behind the fluff</p>
+                <h2 id="meet-dragon">Meet Dragon <span class="intro-heart" aria-hidden="true">♡</span></h2>
+            </header>
+            <div class="profile-layout">
+                <figure class="profile-photo">
+                    <img src="imagenes/dragoneleg.jpeg" alt="Dragon, Maine Coon blue silver shaded, sentado y mirando a la cámara" loading="lazy">
+                </figure>
+                <div class="profile-info">
+                    <p class="profile-bio">Meet Dragon, a blue silver shaded Maine Coon with a big personality and an even bigger heart. Born in Switzerland and now living his best life in Spain, Dragon is a curious little explorer who loves cuddles, playtime and being the center of attention.</p>
+                    <dl class="profile-facts">
+                        <div><dt>Name</dt><dd>Dragon</dd></div>
+                        <div><dt>Birthday</dt><dd>February 25, 2026</dd></div>
+                        <div><dt>Breed</dt><dd>Maine Coon</dd></div>
+                        <div><dt>Coat</dt><dd>Blue Silver Shaded</dd></div>
+                        <div><dt>Born in</dt><dd>Switzerland</dd></div>
+                        <div><dt>Currently living in</dt><dd>Spain</dd></div>
+                    </dl>
+                </div>
+            </div>
+            <div class="profile-traits">
+                <h3>Little Things About Me</h3>
+                <ul class="trait-list">
+                    <li>Professional napper</li>
+                    <li>Midnight zoomies</li>
+                    <li>Belly rub lover</li>
+                    <li>Curious little explorer</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Galería de fotos de cachorro; se conservan las rutas originales -->
+        <section class="gallery-section" aria-labelledby="baby-dragon">
+            <p class="section-label">Small paws, big personality</p>
+            <h2 id="baby-dragon">Baby Dragon Era</h2>
+            <div class="gallery">
+                <figure class="photo-card">
+                    <img src="imagenes/dragonbebe1.jpeg" alt="Dragon cuando era un cachorro" loading="lazy">
+                </figure>
+                <figure class="photo-card">
+                    <img src="imagenes/dragonbb2.jpeg" alt="Dragon de pequeño, en su etapa de cachorro" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <!-- Historia visual de Dragon, organizada en capítulos editoriales -->
+        <section class="journey" aria-labelledby="journey-title">
+            <header class="journey-header journey-reveal">
+                <p class="section-label">A little life, a lot of love</p>
+                <h2 id="journey-title">Dragon's Journey</h2>
+                <p class="journey-subtitle">From tiny paws to big adventures ♡</p>
+                <p class="journey-intro">Every big adventure starts with tiny paws. Follow Dragon's journey from his earliest days to his first little explorations.</p>
+            </header>
+
+            <div class="journey-nav" role="tablist" aria-label="Dragon's Journey stages">
+                <button class="journey-tab" id="journey-tab-01" type="button" role="tab" aria-selected="true" aria-controls="journey-chapter-01" tabindex="0"><span>01</span>Tiny Dragon</button>
+                <button class="journey-tab" id="journey-tab-02" type="button" role="tab" aria-selected="false" aria-controls="journey-chapter-02" tabindex="-1"><span>02</span>Baby Days</button>
+                <button class="journey-tab" id="journey-tab-03" type="button" role="tab" aria-selected="false" aria-controls="journey-chapter-03" tabindex="-1"><span>03</span>Growing Up</button>
+                <button class="journey-tab" id="journey-tab-04" type="button" role="tab" aria-selected="false" aria-controls="journey-chapter-04" tabindex="-1"><span>04</span>Adventures</button>
+            </div>
+
+            <div class="journey-panels">
+                <article class="journey-chapter is-active" id="journey-chapter-01" role="tabpanel" aria-labelledby="journey-tab-01">
+                    <div class="journey-chapter-copy journey-reveal">
+                        <p class="journey-chapter-label">CHAPTER 01</p>
+                        <h3>The Tiniest Dragon</h3>
+                        <p>Where it all began. A tiny ball of fluff with curious eyes, soft ears and the sweetest little face.</p>
+                    </div>
+                    <div class="journey-album">
+                        <div class="journey-gallery">
+                            <figure class="journey-photo journey-slide is-active">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon1.jpg" aria-label="Ampliar: Dragon pequeño en sus primeros días, con su carita curiosa">
+                                    <img src="imagenes/dragon1.jpg" alt="Dragon pequeño en sus primeros días, con su carita curiosa" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="journey-gallery-controls" aria-label="Controles de fotografía">
+                            <button class="journey-gallery-prev" type="button" aria-label="Fotografía anterior" disabled>‹</button>
+                            <p class="journey-gallery-counter" aria-live="polite">1 / 1</p>
+                            <button class="journey-gallery-next" type="button" aria-label="Fotografía siguiente" disabled>›</button>
+                        </div>
+                        <div class="journey-gallery-dots" aria-label="Seleccionar fotografía">
+                            <button type="button" aria-label="Ver fotografía 1" aria-current="true"></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="journey-chapter" id="journey-chapter-02" role="tabpanel" aria-labelledby="journey-tab-02">
+                    <div class="journey-chapter-copy journey-reveal">
+                        <p class="journey-chapter-label">CHAPTER 02</p>
+                        <h3>Cozy Baby Days</h3>
+                        <p>Quiet naps, fluffy cuddles and those early little moments that made everyone fall in love.</p>
+                    </div>
+                    <div class="journey-album">
+                        <div class="journey-gallery">
+                            <figure class="journey-photo journey-slide is-active">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon2.jpg" aria-label="Ampliar: Dragon descansando durante sus primeros días en casa">
+                                    <img src="imagenes/dragon2.jpg" alt="Dragon descansando durante sus primeros días en casa" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                            <figure class="journey-photo journey-slide">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon3.jpg" aria-label="Ampliar: Dragon acurrucado en una siesta de cachorro">
+                                    <img src="imagenes/dragon3.jpg" alt="Dragon acurrucado en una siesta de cachorro" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                            <figure class="journey-photo journey-slide">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon4.jpg" aria-label="Ampliar: Un momento tranquilo y tierno de Dragon pequeño">
+                                    <img src="imagenes/dragon4.jpg" alt="Un momento tranquilo y tierno de Dragon pequeño" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                            <figure class="journey-photo journey-slide">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon6.jpg" aria-label="Ampliar: Dragon disfrutando de sus primeros días acogedores">
+                                    <img src="imagenes/dragon6.jpg" alt="Dragon disfrutando de sus primeros días acogedores" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="journey-gallery-controls" aria-label="Controles de fotografía">
+                            <button class="journey-gallery-prev" type="button" aria-label="Fotografía anterior">‹</button>
+                            <p class="journey-gallery-counter" aria-live="polite">1 / 4</p>
+                            <button class="journey-gallery-next" type="button" aria-label="Fotografía siguiente">›</button>
+                        </div>
+                        <div class="journey-gallery-dots" aria-label="Seleccionar fotografía">
+                            <button type="button" aria-label="Ver fotografía 1" aria-current="true"></button>
+                            <button type="button" aria-label="Ver fotografía 2" aria-current="false"></button>
+                            <button type="button" aria-label="Ver fotografía 3" aria-current="false"></button>
+                            <button type="button" aria-label="Ver fotografía 4" aria-current="false"></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="journey-chapter" id="journey-chapter-03" role="tabpanel" aria-labelledby="journey-tab-03">
+                    <div class="journey-chapter-copy journey-reveal">
+                        <p class="journey-chapter-label">CHAPTER 03</p>
+                        <h3>Growing Into My Fluff</h3>
+                        <p>Day by day, Dragon grew bigger, fluffier and full of personality.</p>
+                    </div>
+                    <div class="journey-album">
+                        <div class="journey-gallery">
+                            <figure class="journey-photo journey-slide is-active">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon5.jpg" aria-label="Ampliar: Dragon mientras crece y su pelaje se vuelve más abundante">
+                                    <img src="imagenes/dragon5.jpg" alt="Dragon mientras crece y su pelaje se vuelve más abundante" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                            <figure class="journey-photo journey-slide">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon7.jpg" aria-label="Ampliar: Dragon con sus patas grandes y su pelaje de Maine Coon">
+                                    <img src="imagenes/dragon7.jpg" alt="Dragon con sus patas grandes y su pelaje de Maine Coon" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="journey-gallery-controls" aria-label="Controles de fotografía">
+                            <button class="journey-gallery-prev" type="button" aria-label="Fotografía anterior">‹</button>
+                            <p class="journey-gallery-counter" aria-live="polite">1 / 2</p>
+                            <button class="journey-gallery-next" type="button" aria-label="Fotografía siguiente">›</button>
+                        </div>
+                        <div class="journey-gallery-dots" aria-label="Seleccionar fotografía">
+                            <button type="button" aria-label="Ver fotografía 1" aria-current="true"></button>
+                            <button type="button" aria-label="Ver fotografía 2" aria-current="false"></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="journey-chapter" id="journey-chapter-04" role="tabpanel" aria-labelledby="journey-tab-04">
+                    <div class="journey-chapter-copy journey-reveal">
+                        <p class="journey-chapter-label">CHAPTER 04</p>
+                        <h3>First Adventures</h3>
+                        <p>From cozy days at home to his first outdoor explorations, Dragon discovered that the world was full of exciting little adventures.</p>
+                    </div>
+                    <div class="journey-album">
+                        <div class="journey-gallery">
+                            <figure class="journey-photo journey-slide is-active">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon8.jpg" aria-label="Ampliar: Dragon explorando el exterior con su arnés">
+                                    <img src="imagenes/dragon8.jpg" alt="Dragon explorando el exterior con su arnés" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                            <figure class="journey-photo journey-slide">
+                                <a class="journey-lightbox-trigger" href="imagenes/dragon9.jpg" aria-label="Ampliar: Dragon viviendo una aventura al aire libre con su arnés">
+                                    <img src="imagenes/dragon9.jpg" alt="Dragon viviendo una aventura al aire libre con su arnés" loading="lazy" decoding="async">
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="journey-gallery-controls" aria-label="Controles de fotografía">
+                            <button class="journey-gallery-prev" type="button" aria-label="Fotografía anterior">‹</button>
+                            <p class="journey-gallery-counter" aria-live="polite">1 / 2</p>
+                            <button class="journey-gallery-next" type="button" aria-label="Fotografía siguiente">›</button>
+                        </div>
+                        <div class="journey-gallery-dots" aria-label="Seleccionar fotografía">
+                            <button type="button" aria-label="Ver fotografía 1" aria-current="true"></button>
+                            <button type="button" aria-label="Ver fotografía 2" aria-current="false"></button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="journey-closing journey-reveal">Still growing, still exploring, still stealing hearts. ♡</p>
+        </section>
+
+        <dialog class="journey-lightbox" aria-label="Galería ampliada de Dragon's Journey">
+            <div class="journey-lightbox-toolbar">
+                <p class="journey-lightbox-counter" aria-live="polite">1 / 9</p>
+                <button class="journey-lightbox-close" type="button" aria-label="Cerrar galería">Cerrar <span aria-hidden="true">×</span></button>
+            </div>
+            <div class="journey-lightbox-stage">
+                <button class="journey-lightbox-prev" type="button" aria-label="Ver fotografía anterior">‹</button>
+                <figure class="journey-lightbox-figure">
+                    <img class="journey-lightbox-image" alt="">
+                    <figcaption class="journey-lightbox-caption"></figcaption>
+                </figure>
+                <button class="journey-lightbox-next" type="button" aria-label="Ver fotografía siguiente">›</button>
+            </div>
+        </dialog>
+
+        <!-- Recuerdos en vídeo organizados en pestañas accesibles -->
+        <section class="little-moments" aria-labelledby="little-moments-title">
+            <header class="little-moments-header">
+                <p class="section-label">Small scenes, lasting memories</p>
+                <h2 id="little-moments-title">The Dragon Diaries <span aria-hidden="true">♡</span></h2>
+                <p class="little-moments-subtitle">Life is better with a little fluff.</p>
+                <p class="little-moments-description">A collection of sweet memories, silly adventures and everyday moments with Dragon.</p>
+            </header>
+
+            <div class="little-moments-tabs" role="tablist" aria-label="Little Moments video categories">
+                <button class="little-moments-tab" id="lm-tab-sweet" type="button" role="tab" aria-selected="true" aria-controls="lm-panel-sweet" tabindex="0">Sweet Little Moments ♡</button>
+                <button class="little-moments-tab" id="lm-tab-funny" type="button" role="tab" aria-selected="false" aria-controls="lm-panel-funny" tabindex="-1">Silly Little Dragon ✨</button>
+                <button class="little-moments-tab" id="lm-tab-adventures" type="button" role="tab" aria-selected="false" aria-controls="lm-panel-adventures" tabindex="-1">Paws &amp; Adventures 🌿</button>
+            </div>
+
+            <div class="little-moments-panels">
+                <section class="little-moments-panel is-active" id="lm-panel-sweet" role="tabpanel" aria-labelledby="lm-tab-sweet">
+                    <h3 class="little-moments-category-heading">Sweet Little Moments ♡</h3>
+                    <p class="little-moments-category-subtitle">The softest side of Dragon.</p>
+                    <div class="little-moments-grid">
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Belly Rubs &amp; Cuddles">
+                                <source src="videos/sweet/video1.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Belly Rubs &amp; Cuddles</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Tiny Paws, Big Love">
+                                <source src="videos/sweet/video2.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Tiny Paws, Big Love</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Cozy Little Moments">
+                                <source src="videos/sweet/video3.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Cozy Little Moments</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Baby Dragon Memories">
+                                <source src="videos/sweet/video4.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Baby Dragon Memories</figcaption>
+                        </figure>
+                    </div>
+                    <div class="little-moments-slider-controls" aria-label="Controles de videos">
+                        <button class="little-moments-previous" type="button" aria-label="Video anterior">Anterior</button>
+                        <p class="little-moments-slider-counter" aria-live="polite">1 / 4</p>
+                        <button class="little-moments-next" type="button" aria-label="Video siguiente">Siguiente</button>
+                    </div>
+                    <div class="little-moments-slider-dots" aria-label="Seleccionar video"></div>
+                </section>
+
+                <section class="little-moments-panel" id="lm-panel-funny" role="tabpanel" aria-labelledby="lm-tab-funny">
+                    <h3 class="little-moments-category-heading">Silly Little Dragon ✨</h3>
+                    <p class="little-moments-category-subtitle">A little chaos, a lot of personality.</p>
+                    <div class="little-moments-grid">
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Those Little Paws">
+                                <source src="videos/funny/video5.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Those Little Paws</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Making Himself Comfortable">
+                                <source src="videos/funny/video6.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Making Himself Comfortable</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Peekaboo, Dragon!">
+                                <source src="videos/funny/video7.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Peekaboo, Dragon!</figcaption>
+                        </figure>
+                    </div>
+                    <div class="little-moments-slider-controls" aria-label="Controles de videos">
+                        <button class="little-moments-previous" type="button" aria-label="Video anterior">Anterior</button>
+                        <p class="little-moments-slider-counter" aria-live="polite">1 / 3</p>
+                        <button class="little-moments-next" type="button" aria-label="Video siguiente">Siguiente</button>
+                    </div>
+                    <div class="little-moments-slider-dots" aria-label="Seleccionar video"></div>
+                </section>
+
+                <section class="little-moments-panel" id="lm-panel-adventures" role="tabpanel" aria-labelledby="lm-tab-adventures">
+                    <h3 class="little-moments-category-heading">Paws &amp; Adventures 🌿</h3>
+                    <p class="little-moments-category-subtitle">Tiny paws, big discoveries.</p>
+                    <div class="little-moments-grid">
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="My First Little Walks">
+                                <source src="videos/adventures/video8.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>My First Little Walks</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Exploring the World">
+                                <source src="videos/adventures/video9.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Exploring the World</figcaption>
+                        </figure>
+                        <figure class="little-moments-card">
+                            <video class="little-moments-video" controls preload="metadata" playsinline aria-label="Adventure Snack Break">
+                                <source src="videos/adventures/video10.mp4" type="video/mp4">
+                                Tu navegador no puede reproducir vídeos MP4.
+                            </video>
+                            <figcaption>Adventure Snack Break</figcaption>
+                        </figure>
+                    </div>
+                    <div class="little-moments-slider-controls" aria-label="Controles de videos">
+                        <button class="little-moments-previous" type="button" aria-label="Video anterior">Anterior</button>
+                        <p class="little-moments-slider-counter" aria-live="polite">1 / 3</p>
+                        <button class="little-moments-next" type="button" aria-label="Video siguiente">Siguiente</button>
+                    </div>
+                    <div class="little-moments-slider-dots" aria-label="Seleccionar video"></div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Enlaces a las redes sociales de Dragon -->
+        <section class="social" aria-labelledby="follow-dragon">
+            <p class="section-label">More fluff, more fun</p>
+            <h2 id="follow-dragon">Follow Dragon's Adventures</h2>
+            <p>Un poquito más de Dragon en tus redes favoritas.</p>
+            <nav class="social-links" aria-label="Redes sociales de Dragon">
+                <a href="https://www.instagram.com/dragon.the.mainecoon/" target="_blank" rel="noopener noreferrer">Instagram · @dragon.the.mainecoon</a>
+                <a href="https://www.tiktok.com/@dragonthemainecoon" target="_blank" rel="noopener noreferrer">TikTok · @dragonthemainecoon</a>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Pie de página sencillo -->
+    <footer>
+        <p>Made with love for Dragon ♡</p>
+    </footer>
+    <script>
+        // Controla el menú móvil, el desplazamiento y el enlace de sección activa.
+        (() => {
+            const nav = document.querySelector(".dragon-nav");
+            const toggle = nav?.querySelector(".dragon-nav-toggle");
+            const menu = nav?.querySelector(".dragon-nav-links");
+            const links = [...(menu?.querySelectorAll("a") || [])];
+            if (!nav || !toggle || !menu) return;
+
+            const closeMenu = (returnFocus = false) => {
+                nav.classList.remove("dragon-nav-open");
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.setAttribute("aria-label", "Abrir menú");
+                if (returnFocus) toggle.focus();
+            };
+
+            toggle.addEventListener("click", () => {
+                const isOpen = toggle.getAttribute("aria-expanded") === "true";
+                nav.classList.toggle("dragon-nav-open", !isOpen);
+                toggle.setAttribute("aria-expanded", String(!isOpen));
+                toggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+            });
+
+            links.forEach((link) => {
+                link.addEventListener("click", () => closeMenu());
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+                    event.preventDefault();
+                    closeMenu(true);
+                }
+            });
+
+            const updateShadow = () => nav.classList.toggle("has-scrolled", window.scrollY > 8);
+            updateShadow();
+            window.addEventListener("scroll", updateShadow, { passive: true });
+
+            const targets = links
+                .map((link) => ({ link, target: document.querySelector(link.getAttribute("href")) }))
+                .filter((item) => item.target);
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    const visible = entries
+                        .filter((entry) => entry.isIntersecting)
+                        .sort((first, second) => first.boundingClientRect.top - second.boundingClientRect.top);
+                    if (!visible.length) return;
+
+                    const activeTarget = visible[0].target;
+                    targets.forEach(({ link, target }) => {
+                        if (target === activeTarget) link.setAttribute("aria-current", "location");
+                        else link.removeAttribute("aria-current");
+                    });
+                }, { rootMargin: "-92px 0px -62% 0px", threshold: 0 });
+
+                targets.forEach(({ target }) => observer.observe(target));
+            }
+
+            nav.classList.add("dragon-nav--enhanced");
+        })();
+
+        // Mejora Dragon's Journey con pestañas, galerías y vista ampliada.
+        (() => {
+            const journey = document.querySelector(".journey");
+            if (!journey) return;
+
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const tabs = [...journey.querySelectorAll(".journey-tab")];
+            const panels = tabs.map((tab) => journey.querySelector(`#${tab.getAttribute("aria-controls")}`));
+            const chapters = panels.filter(Boolean);
+            const lightbox = document.querySelector(".journey-lightbox");
+            const image = lightbox?.querySelector(".journey-lightbox-image");
+            const caption = lightbox?.querySelector(".journey-lightbox-caption");
+            const lightboxCounter = lightbox?.querySelector(".journey-lightbox-counter");
+            const closeButton = lightbox?.querySelector(".journey-lightbox-close");
+            const lightboxPrevious = lightbox?.querySelector(".journey-lightbox-prev");
+            const lightboxNext = lightbox?.querySelector(".journey-lightbox-next");
+            let activeTriggers = [];
+            let currentIndex = 0;
+            let lastTrigger = null;
+
+            const getGalleryParts = (panel) => ({
+                album: panel.querySelector(".journey-album"),
+                gallery: panel.querySelector(".journey-gallery"),
+                slides: [...panel.querySelectorAll(".journey-slide")],
+                previous: panel.querySelector(".journey-gallery-prev"),
+                next: panel.querySelector(".journey-gallery-next"),
+                counter: panel.querySelector(".journey-gallery-counter"),
+                dots: [...panel.querySelectorAll(".journey-gallery-dots button")]
+            });
+
+            const updateGallery = (gallery, index) => {
+                const { slides, previous, next, counter, dots } = getGalleryParts(gallery.closest(".journey-chapter"));
+                if (!slides.length) return;
+
+                const boundedIndex = Math.max(0, Math.min(index, slides.length - 1));
+                slides.forEach((slide, slideIndex) => {
+                    const selected = slideIndex === boundedIndex;
+                    slide.classList.toggle("is-active", selected);
+                    slide.hidden = !selected;
+                    slide.setAttribute("aria-hidden", String(!selected));
+                    if (dots[slideIndex]) dots[slideIndex].setAttribute("aria-current", String(selected));
+                });
+
+                if (counter) counter.textContent = `${boundedIndex + 1} / ${slides.length}`;
+                if (previous) previous.disabled = boundedIndex === 0;
+                if (next) next.disabled = boundedIndex === slides.length - 1;
+            };
+
+            const activatePanel = (tab, moveFocus = false) => {
+                const tabIndex = tabs.indexOf(tab);
+                const panel = panels[tabIndex];
+                if (!panel) return;
+
+                tabs.forEach((item, index) => {
+                    const selected = index === tabIndex;
+                    item.setAttribute("aria-selected", String(selected));
+                    item.tabIndex = selected ? 0 : -1;
+                });
+                panels.forEach((item, index) => {
+                    if (!item) return;
+                    const selected = index === tabIndex;
+                    item.hidden = !selected;
+                    item.classList.toggle("is-active", selected);
+                });
+
+                const { album, gallery } = getGalleryParts(panel);
+                activeTriggers = [...gallery.querySelectorAll(".journey-lightbox-trigger")];
+                currentIndex = 0;
+                if (album) album.classList.add("is-enhanced");
+                if (gallery) {
+                    gallery.classList.add("is-enhanced");
+                    updateGallery(gallery, 0);
+                }
+                panel.querySelectorAll(".journey-reveal").forEach((element) => element.classList.add("journey-visible"));
+                if (moveFocus) tab.focus();
+            };
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", () => activatePanel(tab));
+                tab.addEventListener("keydown", (event) => {
+                    let nextIndex = index;
+                    if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+                    else if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+                    else if (event.key === "Home") nextIndex = 0;
+                    else if (event.key === "End") nextIndex = tabs.length - 1;
+                    else return;
+
+                    event.preventDefault();
+                    activatePanel(tabs[nextIndex], true);
+                });
+            });
+
+            chapters.forEach((panel) => {
+                const { gallery, slides, previous, next, dots } = getGalleryParts(panel);
+                const triggers = [...gallery.querySelectorAll(".journey-lightbox-trigger")];
+                let suppressClickUntil = 0;
+                const changeSlide = (index) => {
+                    currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+                    updateGallery(gallery, currentIndex);
+                };
+
+                previous?.addEventListener("click", () => changeSlide(slides.findIndex((slide) => slide.classList.contains("is-active")) - 1));
+                next?.addEventListener("click", () => changeSlide(slides.findIndex((slide) => slide.classList.contains("is-active")) + 1));
+                dots.forEach((dot, index) => dot.addEventListener("click", () => changeSlide(index)));
+
+                let pointerStart = null;
+                gallery.addEventListener("pointerdown", (event) => {
+                    if (event.pointerType === "touch") pointerStart = { x: event.clientX, y: event.clientY };
+                });
+                gallery.addEventListener("pointerup", (event) => {
+                    if (!pointerStart) return;
+                    const deltaX = event.clientX - pointerStart.x;
+                    const deltaY = event.clientY - pointerStart.y;
+                    if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+                        changeSlide(slides.findIndex((slide) => slide.classList.contains("is-active")) + (deltaX < 0 ? 1 : -1));
+                        suppressClickUntil = Date.now() + 400;
+                    }
+                    pointerStart = null;
+                });
+                gallery.addEventListener("pointercancel", () => { pointerStart = null; });
+
+                triggers.forEach((trigger) => {
+                    trigger.addEventListener("click", (event) => {
+                        if (Date.now() < suppressClickUntil) {
+                            event.preventDefault();
+                            return;
+                        }
+                        if (!lightbox || typeof lightbox.showModal !== "function" || !image || !caption || !lightboxCounter) return;
+                        event.preventDefault();
+                        const currentTab = tabs[panels.indexOf(panel)];
+                        if (currentTab) activatePanel(currentTab);
+                        lastTrigger = trigger;
+                        activeTriggers = triggers;
+                        currentIndex = triggers.indexOf(trigger);
+                        showLightboxImage(currentIndex);
+                        lightbox.showModal();
+                        closeButton?.focus();
+                    });
+                });
+            });
+
+            const showLightboxImage = (index) => {
+                if (!activeTriggers.length || !image || !caption || !lightboxCounter) return;
+                currentIndex = (index + activeTriggers.length) % activeTriggers.length;
+                const trigger = activeTriggers[currentIndex];
+                const thumbnail = trigger.querySelector("img");
+                image.src = trigger.href;
+                image.alt = thumbnail.alt;
+                caption.textContent = thumbnail.alt;
+                lightboxCounter.textContent = `${currentIndex + 1} / ${activeTriggers.length}`;
+                if (lightboxPrevious) lightboxPrevious.disabled = activeTriggers.length < 2;
+                if (lightboxNext) lightboxNext.disabled = activeTriggers.length < 2;
+            };
+
+            lightboxPrevious?.addEventListener("click", () => showLightboxImage(currentIndex - 1));
+            lightboxNext?.addEventListener("click", () => showLightboxImage(currentIndex + 1));
+            closeButton?.addEventListener("click", () => lightbox.close());
+
+            lightbox?.addEventListener("click", (event) => {
+                if (event.target === lightbox) lightbox.close();
+            });
+
+            lightbox?.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    event.preventDefault();
+                    lightbox.close();
+                } else if (event.key === "ArrowLeft" && activeTriggers.length > 1) {
+                    event.preventDefault();
+                    showLightboxImage(currentIndex - 1);
+                } else if (event.key === "ArrowRight" && activeTriggers.length > 1) {
+                    event.preventDefault();
+                    showLightboxImage(currentIndex + 1);
+                }
+            });
+
+            lightbox?.addEventListener("close", () => lastTrigger?.focus());
+
+            if (!tabs.length || !chapters.length) return;
+            journey.classList.add("journey-tabs-enhanced");
+            activatePanel(tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0]);
+
+            if ("IntersectionObserver" in window && !reduceMotion) {
+                const observer = new IntersectionObserver((entries, currentObserver) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("journey-visible");
+                            currentObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+
+                journey.querySelectorAll(".journey-reveal").forEach((element) => observer.observe(element));
+                journey.classList.add("journey-motion-ready");
+            }
+        })();
+
+        // Mejora Little Moments con pestañas y reproducción exclusiva.
+        (() => {
+            const section = document.querySelector(".little-moments");
+            if (!section) return;
+
+            const tabs = [...section.querySelectorAll('[role="tab"]')];
+            const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
+            const videos = [...section.querySelectorAll("video")];
+
+            const setVideo = (panel, index) => {
+                const cards = [...panel.querySelectorAll(".little-moments-card")];
+                const activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+                const previous = panel.querySelector(".little-moments-previous");
+                const next = panel.querySelector(".little-moments-next");
+                const counter = panel.querySelector(".little-moments-slider-counter");
+                const dots = panel.querySelector(".little-moments-slider-dots");
+
+                cards.forEach((card, cardIndex) => {
+                    const selected = cardIndex === activeIndex;
+                    card.classList.toggle("is-active", selected);
+                    card.hidden = !selected;
+                    if (!selected) card.querySelector("video")?.pause();
+                });
+
+                if (counter) counter.textContent = `${activeIndex + 1} / ${cards.length}`;
+                if (previous) previous.disabled = activeIndex === 0 || cards.length < 2;
+                if (next) next.disabled = activeIndex === cards.length - 1 || cards.length < 2;
+                if (dots) {
+                    [...dots.children].forEach((dot, dotIndex) => {
+                        dot.setAttribute("aria-current", String(dotIndex === activeIndex));
+                    });
+                }
+                panel.dataset.activeVideo = String(activeIndex);
+            };
+
+            panels.forEach((panel) => {
+                const cards = [...panel.querySelectorAll(".little-moments-card")];
+                const dots = panel.querySelector(".little-moments-slider-dots");
+                const previous = panel.querySelector(".little-moments-previous");
+                const next = panel.querySelector(".little-moments-next");
+                let pointerStart = null;
+                let suppressClickUntil = 0;
+
+                if (dots) {
+                    cards.forEach((card, index) => {
+                        const dot = document.createElement("button");
+                        const title = card.querySelector("figcaption")?.textContent.trim() || `video ${index + 1}`;
+                        dot.type = "button";
+                        dot.setAttribute("aria-label", `Ver video ${index + 1}: ${title}`);
+                        dot.setAttribute("aria-current", String(index === 0));
+                        dot.addEventListener("click", () => setVideo(panel, index));
+                        dots.append(dot);
+                    });
+                }
+
+                previous?.addEventListener("click", () => {
+                    setVideo(panel, Number(panel.dataset.activeVideo || 0) - 1);
+                });
+                next?.addEventListener("click", () => {
+                    setVideo(panel, Number(panel.dataset.activeVideo || 0) + 1);
+                });
+
+                const grid = panel.querySelector(".little-moments-grid");
+                grid?.addEventListener("pointerdown", (event) => {
+                    if (event.pointerType === "touch") pointerStart = { x: event.clientX, y: event.clientY };
+                });
+                grid?.addEventListener("pointerup", (event) => {
+                    if (!pointerStart) return;
+                    const deltaX = event.clientX - pointerStart.x;
+                    const deltaY = event.clientY - pointerStart.y;
+                    if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) {
+                        setVideo(panel, Number(panel.dataset.activeVideo || 0) + (deltaX < 0 ? 1 : -1));
+                        suppressClickUntil = Date.now() + 400;
+                    }
+                    pointerStart = null;
+                });
+                grid?.addEventListener("pointercancel", () => { pointerStart = null; });
+                grid?.addEventListener("click", (event) => {
+                    if (Date.now() < suppressClickUntil) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                }, true);
+
+                setVideo(panel, 0);
+            });
+
+            const activateTab = (activeTab, moveFocus = false) => {
+                const activeIndex = tabs.indexOf(activeTab);
+
+                tabs.forEach((tab, index) => {
+                    const selected = index === activeIndex;
+                    tab.setAttribute("aria-selected", String(selected));
+                    tab.tabIndex = selected ? 0 : -1;
+                    panels[index].classList.toggle("is-active", selected);
+                    panels[index].setAttribute("aria-hidden", String(!selected));
+                    panels[index].inert = !selected;
+                });
+
+                videos.forEach((video) => video.pause());
+                setVideo(panels[activeIndex], 0);
+                if (moveFocus) activeTab.focus();
+            };
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", () => activateTab(tab));
+                tab.addEventListener("keydown", (event) => {
+                    let nextIndex = index;
+                    if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+                    else if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+                    else if (event.key === "Home") nextIndex = 0;
+                    else if (event.key === "End") nextIndex = tabs.length - 1;
+                    else return;
+
+                    event.preventDefault();
+                    activateTab(tabs[nextIndex], true);
+                });
+            });
+
+            videos.forEach((video) => {
+                video.addEventListener("play", () => {
+                    videos.forEach((otherVideo) => {
+                        if (otherVideo !== video) otherVideo.pause();
+                    });
+                });
+            });
+
+            activateTab(tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0]);
+            section.classList.add("little-moments-enhanced");
+        })();
+    </script>
+</body>
+</html>
